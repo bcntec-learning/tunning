@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>ear</artifactId>
+    <packaging>ear</packaging>
+
+    <parent>
+        <groupId>houseware.learn.tunning.wildfly2</groupId>
+        <artifactId>04-wildfly</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../</relativePath>
+    </parent>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-ear-plugin</artifactId>
+                <version>3.0.0</version>
+                <configuration>
+                    <!--
+                     <finalName>${project.artifactId}</finalName>
+                     -->
+                    <version>${jee-version}</version>
+                    <modules>
+                        <jarModule>
+                            <groupId>houseware.learn.tunning.wildfly2</groupId>
+                            <artifactId>ejb-remote</artifactId>
+                            <bundleDir>lib</bundleDir>
+                        </jarModule>
+                        <jarModule>
+                            <groupId>houseware.learn.tunning.wildfly2</groupId>
+                            <artifactId>domain</artifactId>
+                            <bundleDir>lib</bundleDir>
+                        </jarModule>
+                        <ejbModule>
+                            <groupId>houseware.learn.tunning.wildfly2</groupId>
+                            <artifactId>ejb</artifactId>
+                        </ejbModule>
+                    </modules>
+                </configuration>
+            </plugin>
+        </plugins>
+<!--
+        <finalName>${project.parent.artifactId}</finalName>
+-->
+    </build>
+    <dependencies>
+        <!-- domain model -->
+        <dependency>
+            <groupId>houseware.learn.tunning.wildfly2</groupId>
+            <artifactId>domain</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>houseware.learn.tunning.wildfly2</groupId>
+            <artifactId>ejb</artifactId>
+            <version>${project.version}</version>
+            <type>ejb</type>
+        </dependency>
+    </dependencies>
+</project>

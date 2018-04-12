@@ -1,0 +1,12 @@
+batch
+
+# Add EJB3 test thread pools
+/subsystem=ejb3/strict-max-bean-instance-pool=slsb-strict-max-pool-10:add(max-pool-size=10, timeout-unit=MINUTES, timeout=5L)
+/subsystem=ejb3/strict-max-bean-instance-pool=slsb-strict-max-pool-100:add(max-pool-size=100, timeout-unit=MINUTES, timeout=5L)
+
+# Add test queues
+jms-queue add --queue-address=testQueue --entries=queue/testQueue,java:jboss/queue/testQueue
+jms-queue add --queue-address=testQueue2 --entries=queue/testQueue2,java:jboss/queue/testQueue2
+
+run-batch
+:reload
