@@ -9,6 +9,7 @@ import java.util.List;
 public class StatefulEJB {
 
     List<String> list = new ArrayList<>();
+
     public String sayHello(String name) {
         list.add(name);
         return "Hello " + name;

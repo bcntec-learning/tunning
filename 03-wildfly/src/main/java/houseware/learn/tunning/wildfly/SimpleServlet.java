@@ -12,10 +12,13 @@ import java.util.logging.Logger;
 public class SimpleServlet extends HttpServlet {
     private static final Logger LOGGER = Logger.getLogger(SimpleServlet.class.toString());
 
+
+    byte[] buffer = new byte[1024*1204*20];
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
-            Thread.sleep(100);
+
+            Thread.sleep(1000*1);
         } catch (InterruptedException e) {
             throw new ServletException(e);
         }
