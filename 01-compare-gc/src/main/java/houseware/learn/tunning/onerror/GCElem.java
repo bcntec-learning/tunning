@@ -4,9 +4,9 @@ import java.util.Objects;
 
 public class GCElem {
     Long id;
-    String data;
+    byte[] data;
 
-    public GCElem(Long id, String data) {
+    public GCElem(Long id, byte[] data) {
         this.id = id;
         this.data = data;
     }

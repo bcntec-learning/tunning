@@ -8,13 +8,15 @@ fi
 echo "path: $apath"
 echo "target: $tpath"
 
-echo "+UseG1GC "
+echo "+UseParallelGC "
 
 java \
 -classpath $tpath/classes \
--Xmx100m \
--XX:+UseG1GC \
+-Xmx40m \
+-XX:+UseParallelGC \
 -XX:+UnlockCommercialFeatures -XX:+FlightRecorder \
 -XX:HeapDumpPath=$tpath \
 -XX:+HeapDumpOnOutOfMemoryError \
+-verbose:gc \
+-XX:+PrintGCTimeStamps -Xloggc:$tpath/parallel.log  -XX:+PrintGCDetails \
 houseware.learn.tunning.onerror.GCEval

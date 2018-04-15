@@ -8,13 +8,15 @@ fi
 echo "path: $apath"
 echo "target: $tpath"
 
-echo "+UseParallelGC "
+echo "+UseConcMarkSweepGC "
 
 java \
 -classpath $tpath/classes \
 -Xmx40m \
--XX:+UseParallelGC \
+-XX:+UseConcMarkSweepGC \
 -XX:+UnlockCommercialFeatures -XX:+FlightRecorder \
 -XX:HeapDumpPath=$tpath \
 -XX:+HeapDumpOnOutOfMemoryError \
+-verbose:gc \
+-XX:+PrintGCTimeStamps -Xloggc:$tpath/cms.log  -XX:+PrintGCDetails \
 houseware.learn.tunning.onerror.GCEval
