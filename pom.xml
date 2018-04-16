@@ -29,7 +29,7 @@
 
     <modules>
         <module>01-metaspace</module>
-        <module>01-onerror</module>
+        <module>01-compare-gc</module>
         <!--
         <module>02-simple-jee</module>
         -->
