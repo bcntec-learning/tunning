@@ -14,5 +14,7 @@ java \
  -classpath $tpath/classes \
  -Xmx30m \
  -XX:+CrashOnOutOfMemoryError \
+  -XX:HeapDumpPath=$tpath \
+ -XX:+HeapDumpOnOutOfMemoryError \
  -XX:OnOutOfMemoryError="echo $(date) crashing>>oome.txt" \
  houseware.learn.tunning.onerror.OnError

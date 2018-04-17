@@ -11,7 +11,9 @@ echo "target: $tpath"
 
 
 java \
--classpath $tpath/classes \
--Xmx30m \
--XX:OnOutOfMemoryError="echo $(date)>>oome.txt" \
-houseware.learn.tunning.onerror.OnError
+  -classpath $tpath/classes \
+  -Xmx30m \
+  -XX:OnOutOfMemoryError="echo $(date)>>oome.txt" \
+  -XX:HeapDumpPath=$tpath \
+  -XX:+HeapDumpOnOutOfMemoryError \
+  houseware.learn.tunning.onerror.OnError

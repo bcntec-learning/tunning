@@ -15,4 +15,6 @@ java \
  -Xmx30m \
  -XX:+ExitOnOutOfMemoryError \
  -XX:OnOutOfMemoryError="echo $(date) exiting>>oome.txt" \
+ -XX:HeapDumpPath=$tpath \
+ -XX:+HeapDumpOnOutOfMemoryError \
  houseware.learn.tunning.onerror.OnError
