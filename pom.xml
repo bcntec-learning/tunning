@@ -30,11 +30,13 @@
     <modules>
         <module>01-metaspace</module>
         <module>01-compare-gc</module>
+        <module>01-onerror</module>
         <!--
         <module>02-simple-jee</module>
         -->
         <module>03-wildfly</module>
         <module>04-wildfly</module>
+        <module>05-memory-leaks-1</module>
         <module>m1</module>
     </modules>
 

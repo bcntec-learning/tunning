@@ -8,4 +8,10 @@ fi
 echo "path: $apath"
 echo "target: $tpath"
 
-mat -
+
+
+java \
+-classpath $tpath/classes \
+-Xmx30m \
+-XX:OnOutOfMemoryError="echo $(date)>>oome.txt" \
+houseware.learn.tunning.onerror.OnError
