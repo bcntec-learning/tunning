@@ -7,5 +7,5 @@ if [ -z "$tpath" ] ; then
 fi
 echo "path: $apath"
 echo "target: $tpath"
-
-mat -
+mkdir -p $tpath/mat
+mat -data $tpath/mat

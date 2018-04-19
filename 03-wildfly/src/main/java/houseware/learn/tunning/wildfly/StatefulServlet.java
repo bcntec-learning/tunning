@@ -11,6 +11,9 @@ import java.io.IOException;
 @WebServlet("/Stateful")
 public class StatefulServlet extends HttpServlet {
 
+
+    byte[] datosAlPedo = new byte[1024*1024*64];
+
     @EJB
     StatefulEJB statefulEJB;
 
